@@ -16133,7 +16133,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _leaflet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./leaflet */ "./src/app/shared/components/leaflet/leaflet.ts");
+/* harmony import */ var _environments__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../environments */ "./src/environments/index.ts");
+/* harmony import */ var _leaflet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./leaflet */ "./src/app/shared/components/leaflet/leaflet.ts");
+
 
 
 
@@ -16143,7 +16145,7 @@ var LeafletComponent = /** @class */ (function () {
         this.componentFactoryResolver = componentFactoryResolver;
         this.injector = injector;
         this.applicationRef = applicationRef;
-        this.imagePath = '/assets/libs/leaflet/images/';
+        this.imagePath = _environments__WEBPACK_IMPORTED_MODULE_3__["environment"].baseHref + "assets/libs/leaflet/images/";
         this.height = '650px';
         this.defaultViewPoint = { lat: '12.2904259', lng: '108.9514516' };
         this.defaultPopupContent = 'Oxanh Farm';
@@ -16229,7 +16231,7 @@ var LeafletComponent = /** @class */ (function () {
                             var component = popupProps.component;
                             var componentFactory = _this.componentFactoryResolver.resolveComponentFactory(component);
                             var componentRef = componentFactory.create(_this.injector);
-                            componentRef.instance.leafletLayer = new _leaflet__WEBPACK_IMPORTED_MODULE_3__["LeafletLayer"](layer);
+                            componentRef.instance.leafletLayer = new _leaflet__WEBPACK_IMPORTED_MODULE_4__["LeafletLayer"](layer);
                             _this.applicationRef.attachView(componentRef.hostView);
                             var domElem = componentRef.hostView
                                 .rootNodes[0];
@@ -16241,7 +16243,7 @@ var LeafletComponent = /** @class */ (function () {
                         }
                         layer.bindPopup(popup);
                     }
-                    layer.on('click', function () { return _this.clickLayer.emit(new _leaflet__WEBPACK_IMPORTED_MODULE_3__["LeafletLayer"](layer)); });
+                    layer.on('click', function () { return _this.clickLayer.emit(new _leaflet__WEBPACK_IMPORTED_MODULE_4__["LeafletLayer"](layer)); });
                 }
             },
             pointToLayer: function (feature, latlng) {

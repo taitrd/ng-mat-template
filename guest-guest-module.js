@@ -743,7 +743,7 @@ var entityRoutes = _account__WEBPACK_IMPORTED_MODULE_0__["accountRoutes"].concat
 /*!***********************************!*\
   !*** ./src/app/entities/index.ts ***!
   \***********************************/
-/*! exports provided: PasswordResetFinishComponent, PasswordResetFinishService, PasswordResetInitComponent, PasswordResetInitService, UserUpdateDialogComponent, UserUpdatePopupComponent, UserDeleteDialogComponent, UserDeletePopupComponent, UserListComponent, passwordResetFinishRoute, passwordResetInitRoute, entityRoutes, authRoutes */
+/*! exports provided: UserDeleteDialogComponent, UserDeletePopupComponent, PasswordResetFinishComponent, PasswordResetFinishService, passwordResetFinishRoute, PasswordResetInitComponent, PasswordResetInitService, passwordResetInitRoute, UserUpdateDialogComponent, UserUpdatePopupComponent, UserListComponent, entityRoutes, authRoutes */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

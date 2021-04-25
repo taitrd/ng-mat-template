@@ -508,6 +508,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./shared */ "./src/app/shared/index.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _environments__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../environments */ "./src/environments/index.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
+
 
 
 
@@ -579,6 +583,7 @@ var AppModule = /** @class */ (function () {
                     deps: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injector"]],
                     multi: true,
                 },
+                { provide: _angular_common__WEBPACK_IMPORTED_MODULE_18__["APP_BASE_HREF"], useValue: _environments__WEBPACK_IMPORTED_MODULE_17__["environment"].baseHref },
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
@@ -4779,10 +4784,12 @@ var LanguageComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CachedHttpTranslationLoader", function() { return CachedHttpTranslationLoader; });
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _environments__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../environments */ "./src/environments/index.ts");
+
 
 var CachedHttpTranslationLoader = /** @class */ (function () {
     function CachedHttpTranslationLoader(http, prefix, suffix) {
-        if (prefix === void 0) { prefix = '/assets/i18n/'; }
+        if (prefix === void 0) { prefix = 'assets/i18n/'; }
         if (suffix === void 0) { suffix = '.json'; }
         this.http = http;
         this.prefix = prefix;
@@ -4795,7 +4802,7 @@ var CachedHttpTranslationLoader = /** @class */ (function () {
      */
     CachedHttpTranslationLoader.prototype.getTranslation = function (lang) {
         if (!this.cache$ || this.cachedLang !== lang) {
-            this.cache$ = this.http.get("" + this.prefix + lang + this.suffix).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["shareReplay"])(1));
+            this.cache$ = this.http.get("" + _environments__WEBPACK_IMPORTED_MODULE_1__["environment"].baseHref + this.prefix + lang + this.suffix).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["shareReplay"])(1));
             this.cachedLang = lang;
         }
         return this.cache$;
@@ -5647,7 +5654,7 @@ var SideNavDirective = /** @class */ (function () {
 /*!*********************************!*\
   !*** ./src/app/shared/index.ts ***!
   \*********************************/
-/*! exports provided: DATE_FORMAT, DATE_TIME_FORMAT, LoadingScreenService, createTranslateLoader, SharedLibsModule, SharedCommonModule, SharedModule, NOTIFIER_OPTIONS, ITEMS_PER_PAGE, PAGE_SIZE_OPTIONS, DateFormatPipe, FixedPipe, NumberFormatPipe, PadNumberPipe, CriteriaSearch, FilterCriteria, toDateString, toCurrencyString, createRequestOption, parseNgbDateToLocalDateString, getDateOfISOWeek, formatDate, getMonday, getWeek, getWeekNumber, weeksInYear, checkDateInWeek, PasswordChange, FilterField, Notification, Search, AlertNotifierComponent, ChartComponent, ConfirmDialogComponent, GridComponent, LoadingScreenComponent, MenuListItemComponent, NavService, SelectComponent, LanguageComponent */
+/*! exports provided: DATE_FORMAT, DATE_TIME_FORMAT, NOTIFIER_OPTIONS, LoadingScreenService, createTranslateLoader, SharedLibsModule, SharedCommonModule, SharedModule, ITEMS_PER_PAGE, PAGE_SIZE_OPTIONS, DateFormatPipe, FixedPipe, NumberFormatPipe, PadNumberPipe, CriteriaSearch, FilterCriteria, toDateString, toCurrencyString, createRequestOption, parseNgbDateToLocalDateString, getDateOfISOWeek, formatDate, getMonday, getWeek, getWeekNumber, weeksInYear, checkDateInWeek, PasswordChange, FilterField, Notification, Search, AlertNotifierComponent, ChartComponent, ConfirmDialogComponent, GridComponent, LoadingScreenComponent, MenuListItemComponent, NavService, SelectComponent, LanguageComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7100,7 +7107,7 @@ var createRequestOption = function (req) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
 var environment = {
-    production: false,
+    production: true,
     firebase: {
         apiKey: 'AIzaSyDeB7nnihu9P81mHQO5NNb4ASdHx0-jV34',
         authDomain: 'fcm-angular2web.firebaseapp.com',
@@ -7115,6 +7122,7 @@ var environment = {
     appPrefix: 'angular2web',
     appTitle: 'Angular2Web',
     debug: false,
+    baseHref: '/angular2-material-theme/',
 };
 
 

@@ -150,7 +150,7 @@ var HomeModule = /** @class */ (function () {
 /*!****************************************!*\
   !*** ./src/app/entities/home/index.ts ***!
   \****************************************/
-/*! exports provided: homeRoutes, DashboardComponent, HomeModule */
+/*! exports provided: DashboardComponent, homeRoutes, HomeModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
